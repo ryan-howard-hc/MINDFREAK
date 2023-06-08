@@ -5,18 +5,69 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/repo/css/styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">    <link rel="stylesheet" href="/repo/css/styles.css">
+
     <title>MINDFREAK!!!</title>
 </head>
+
 <body>
-<div class="container-fluid">
-    <div class="text-center">
-        <h1>MINDFREAK!</h1>
+    <div class="container-fluid">
+        <div class="text-center">
+            <h1>MINDFREAK!</h1>
+        </div>
+        <div class="container my-5">
+            <div id="carouselExampleControls" class="carousel slide">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <h2>Page 1</h2>
+                    </div>
+                    <div class="carousel-item">
+                        <h2>Page 2</h2>
+                    </div>
+                    <div class="carousel-item">
+                        <h2>Page 3</h2>
+                    </div>
+                    <div class="carousel-item">
+                        <h2>Page 4</h2>
+                    </div>
+                    <div class="carousel-item">
+                        <h2>Page 5</h2>
+                    </div>
+                    <div class="carousel-item">
+                        <h2>Page 6</h2>
+                    </div>
+                </div>
+                <button class="carousel-control-prev btn-black" type="button" data-bs-target="#carouselExampleControls"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    Previous
+                </button>
+                <button class="carousel-control-next btn-black" type="button" data-bs-target="#carouselExampleControls"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    Next
+                </button>
+            </div>
+        </div>
     </div>
-</div>
+
+   
+
+    <script>
+        const carousel = document.querySelector('#carouselExampleControls');
+        const scrollButton = document.querySelector('#scrollButton');
+
+        let currentPage = 0;
+        const totalPages = 6;
+
+        scrollButton.addEventListener('click', function () {
+            currentPage = (currentPage + 1) % totalPages;
+            carousel.querySelector('.carousel-inner').style.transform = `translateX(-${currentPage * 100}%)`;
+        });
+    </script>
 
 
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
+</html>
