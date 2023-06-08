@@ -18,13 +18,13 @@ let state = {
         {
             header: "Add both digits together to get a new number",
             next: "NEXT",
-            subhead: "Ex: 21 is 1 + 2 = 3 : click next to proceed",
+            subhead: "Ex: 21 is 1 + 2 = 3 : click next to continue",
             reset: "restart icon",
         },
         {
             header: "Subtract your new number from the original number",
             next: "NEXT",
-            subhead: "Ex: 21 - 3 = 18 : click next to proceed",
+            subhead: "Ex: 21 - 3 = 18 : click next to continue",
             reset: "restart icon",
         },
         {
@@ -42,6 +42,11 @@ let state = {
     ]
 } //array for each slide
 
+let h1 = document.querySelector("h1");
+let h2 = document.querySelector("h2");
+let next = document.getElementById("next")
+let reset = document.getElementById("reset")
+
 function mindReader(symbols) { //function for a symbol map with symbol array as the string input
     let getSymbol = 0; //initialized variable
     let chosenSymbol = {}; //empty object for when the symbol is determined
@@ -55,3 +60,12 @@ function mindReader(symbols) { //function for a symbol map with symbol array as 
     return chosenSymbol; //returns object, maps each number 
   }
 
+  function updatePageContent() {
+    const currentPage = state.pages[state.page];
+    h1.textContent = currentPage.header;
+    h2.textContent = currentPage.subhead;
+    next.textContent = currentPage.next;
+    reset.textContent = currentPage.reset;
+  }
+  
+  updatePageContent();
