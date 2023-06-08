@@ -21,7 +21,7 @@ Should take a number without being input, and while doing basic mathematics shou
     pressNext -> assigns new value to currentPage or increments new currentPage (page.push())
     pressBack -> refer to pressNext
     mindReader -> calls string (mindText)
-               -> var getSymbol = []
+               -> var getSymbols = []
                -> var chosenSymbol = ""
     
     getSymbol -> retrieves symbol based on userInput (probably using arrays) ['@','#','$','%','&']
