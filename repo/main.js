@@ -1,10 +1,7 @@
 let symbols = ["$", "@", "#", "!", "%", "^", "&", "*", "+"]
 
-
-
 let state = {
     page: 0,
-    // array of page objects with content for every view
     pages: [
         {
             header: "I can read your mind.",
@@ -31,7 +28,6 @@ let state = {
             go: "restart icon",
         },
         {
-            //CAN'T USE STATE.SYMBOLS WITHIN STATE BECAUSE ITS NOT INIT YET
             header: getSymbols(symbols),
             next: "REVEAL",
             subhead: "Find your new number. : Note the symbol beside the number",
