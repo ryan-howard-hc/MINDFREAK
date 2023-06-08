@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">    <link rel="stylesheet" href="/repo/css/styles.css">
-
+    <script src="/repo/main.js"></script>
     <title>MINDFREAK!!!</title>
 </head>
 
@@ -37,34 +37,17 @@
                         <h2>Page 6</h2>
                     </div>
                 </div>
-                <button class="carousel-control-prev btn-black" type="button" data-bs-target="#carouselExampleControls"
-                    data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <button class="carousel-control-prev btn-black" type="button" data-bs-target="#carouselExampleControls">
+                    <span class="carousel-control-prev-icon" aria-hidden="false"></span>
                     Previous
                 </button>
-                <button class="carousel-control-next btn-black" type="button" data-bs-target="#carouselExampleControls"
-                    data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <button class="carousel-control-next btn-black" type="button" data-bs-target="#carouselExampleControls">
+                    <span class="carousel-control-next-icon" aria-hidden="false"></span>
                     Next
                 </button>
             </div>
         </div>
     </div>
-
-   
-
-    <script>
-        const carousel = document.querySelector('#carouselExampleControls');
-        const scrollButton = document.querySelector('#scrollButton');
-
-        let currentPage = 0;
-        const totalPages = 6;
-
-        scrollButton.addEventListener('click', function () {
-            currentPage = (currentPage + 1) % totalPages;
-            carousel.querySelector('.carousel-inner').style.transform = `translateX(-${currentPage * 100}%)`;
-        });
-    </script>
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

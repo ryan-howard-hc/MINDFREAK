@@ -1,12 +1,26 @@
-const carousel = document.querySelector('#carouselExampleControls');
-const scrollButton = document.querySelector('#scrollButton');
+        document.addEventListener("DOMContentLoaded", function () {
+            const carousel = document.querySelector("#carouselExampleControls");
+            const prevButton = carousel.querySelector(".carousel-control-prev");
+            const nextButton = carousel.querySelector(".carousel-control-next"); 
+            const carouselInner = carousel.querySelector(".carousel-inner"); //carousel-inner div controls all the carousel items
+//.addEventListener attaches an event handler to the element specified
+//it also separates the JS from the HTML which allows you to add event listeners even when you dont control HTML markup
+//DOMContentLoaded event fires when HTML has been completely parsed and all deferred scripts have executed.
+//DOMContentLoaded doesnt wait for things like images, subframes, and async scripts to finish loading
 
-let currentPage = 0; 
-const totalPages = 6;
+            let currentPage = 0;
+            const totalPages = carouselInner.children.length;
 
-scrollButton.addEventListener('click', function () {
-    currentPage = (currentPage + 1) % totalPages;
-    carousel.querySelector('.carousel-inner').style.transform = `translateX(-${currentPage * 100}%)`;
-});
+            prevButton.addEventListener("click", function () {
+                currentPage = (currentPage - 1 + totalPages) % totalPages;
+                carouselInner.style.transform = `translateX(-${currentPage * 100}%)`;
+            });
 
-let pages = [pageOne,pageTwo,pageThree,pageFour,pageFive,pageSix]
+            nextButton.addEventListener("click", function () {
+                currentPage = (currentPage + 1) % totalPages;
+                carouselInner.style.transform = `translateX(-${currentPage * 100}%)`;
+            });
+        });
+
+        //These two eventlisteners update currentPage variable based on the prevButton and nextButton variables 
+        //that are attached to the carousel controls through querySelector
