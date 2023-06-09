@@ -52,7 +52,7 @@ let state = {
         },
     ]
 } //array for each slide
-})
+
 
 
 function mindReader(array) { //function for a symbol map with the symbol array as the string input
@@ -78,12 +78,12 @@ function mindReader(array) { //function for a symbol map with the symbol array a
 
 next.addEventListener("click", () => {
     animate();
-
+    setTimeout(setPage, 1000, state["page"] + 1);
 })
 
 
   reset.addEventListener("click", () => {
-    if (go.innerHTML == "reset") {
+    if (reset.innerHTML == "reset") {
         animate();
         setTimeout(updatePageContent, 100, 1)    
     }
@@ -101,3 +101,5 @@ function animate() {
 }
 
 updatePageContent(Number(localStorage.getItem("page")));
+
+})
