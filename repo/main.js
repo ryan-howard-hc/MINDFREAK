@@ -39,7 +39,7 @@ const pages= [ //array of pages to go through
             reset: "restart icon",
         },
         {
-            header: mindReader(symbols), //pulls the symbol from function (hint, its always $)
+            header: mindReader[symbols], //pulls the symbol from function (hint, its always $)
             next: "REVEAL",
             subhead: "Find your new number. : Note the symbol beside the number",
             reset: "restart icon",
