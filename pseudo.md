@@ -17,6 +17,9 @@ Should take a number without being input, and while doing basic mathematics shou
 <br>
 
 # RENDER/PROCEDURAL
+    getSymbol -> retrieves symbol based on userInput (probably using arrays) ['@','#','$','%','&']
+        -create arrays to assign values
+        
     callNumber -> value assigned by user
     pressNext -> assigns new value to currentPage or increments new currentPage (page.push())
     pressBack -> refer to pressNext

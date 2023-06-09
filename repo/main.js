@@ -1,3 +1,9 @@
+let h1 = document.querySelector("h1");
+let h2 = document.querySelector("h2");
+let next = document.getElementById("next");
+let reset = document.getElementById("reset");
+//maybe the document variables go up here?
+
 let symbols = ["$", "@", "#", "!", "%", "^", "&", "*", "+"] //array for symbols 1 through 9
 
 let state = {
@@ -42,13 +48,10 @@ let state = {
     ]
 } //array for each slide
 
-let h1 = document.querySelector("h1");
-let h2 = document.querySelector("h2");
-let next = document.getElementById("next")
-let reset = document.getElementById("reset")
 
-function mindReader(symbols) { //function for a symbol map with symbol array as the string input
-    let getSymbol = 0; //initialized variable
+
+function mindReader(symbols) { //function for a symbol map with the symbol array as the string input
+    let getSymbol = 0; //initialized variable, starting point
     let chosenSymbol = {}; //empty object for when the symbol is determined
   
     for (let i = 0; i < 100; i++) { //loops from 00 to 99 by counting upward
@@ -60,12 +63,28 @@ function mindReader(symbols) { //function for a symbol map with symbol array as 
     return chosenSymbol; //returns object, maps each number 
   }
 
-  function updatePageContent() {
-    const currentPage = state.pages[state.page];
-    h1.textContent = currentPage.header;
-    h2.textContent = currentPage.subhead;
-    next.textContent = currentPage.next;
-    reset.textContent = currentPage.reset;
+
+
+  function updatePageContent(page) {
+//                 the state variable encompassing the pages variable, to bring it to the page variable aka the current page
+    h1.innerHTML = state.pages[page].header; //connecting the h1 from html to the header text in the array
+    h2.innerHTML = state.pages[page].subhead; //connecting the h2 to sub
+    next.innerHTML = state.pages[page].next; // connecting the next 
+    reset.innerHTML = state.pages[page].reset;
+    state.page = page;
+    location.hash = page;
   }
   
   updatePageContent();
+
+  go.addEventListener("click", () => {
+    if (go.innerHTML == "reset") {
+        animate();
+        setTimeout(setPage, 100, 1)    
+    }
+    else {
+        animate();
+        setTimeout(setPage, 100, 0)
+    }
+
+})
