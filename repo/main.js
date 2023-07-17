@@ -6,6 +6,12 @@ document.addEventListener("DOMContentLoaded", () => {
     let next = document.getElementById("next"); // connecting next button to 'next' array text
     let reset = document.getElementById("reset");
     // maybe the document variables go up here?
+    let container = document.createElement("div");
+    
+    container.className = "row justify-content-center";
+    container.style.width = "500px";
+    container.style.height = "auto";
+    container.style.backgroundColor = "cadetblue";
 
     let symbols = [
         "$",
@@ -48,7 +54,7 @@ document.addEventListener("DOMContentLoaded", () => {
             subhead: "Ex: 21 - 3 = 18 : click next to continue",
             reset: "restart icon"
         }, {
-            header: mindReader[symbols], // pulls the symbol from function (hint, its always $)
+            header: mindReader(symbols), // pulls the symbol from function (hint, its always $)
             next: "REVEAL",
             subhead: "Find your new number. Note the symbol beside the number",
             reset: "restart icon"
@@ -118,7 +124,7 @@ document.addEventListener("DOMContentLoaded", () => {
     //     h1.offsetWidth;
     //     h1.classList.add("slide");
     // }
-
+    h1.className = "wrap-text";
     updatePageContent();
 
 });
